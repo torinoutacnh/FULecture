@@ -1,0 +1,97 @@
+{
+  "menu": {
+    "product": {
+      "root": "Sản phẩm",
+      "master": "Dòng Sản phẩm",
+      "collection": "Bộ sưu tập",
+      "categories": "Danh mục"
+    },
+    "menu": { "root": "Bảng giá", "list": "Danh sách bảng giá", "store-menu": "Cửa hàng áp dụng" },
+    "store": "Cửa hàng",
+    "order": "Đơn hàng",
+    "store-menu": "Bảng giá",
+    "product-subheader": "Sản phẩm",
+    "menu-subheader": "Bảng giá",
+    "store-subheader": "Cửa hàng"
+  },
+  "pages": {
+    "stores": {
+      "listTitle": "Danh sách cửa hàng",
+      "updateTitle": "Cập nhật cửa hàng",
+      "addBtn": "Thêm cửa hàng",
+      "table": {
+        "name": "Tên cửa hàng",
+        "shortName": "Tên rút gọn",
+        "isAvailable": "Trạng thái",
+        "storeCode": "Mã cửa hàng",
+        "openTime": "Mở cửa",
+        "closeTime": "Đóng cửa",
+        "type": "Loại cửa hàng"
+      },
+      "storeInfoTitle": "Thông tin cửa hàng",
+      "storeMenu": "Bảng giá",
+      "applyMenuStore": "Thêm bảng giá",
+      "editMenuStore": "Điều chỉnh bảng giá"
+    },
+    "menus": {
+      "table": {
+        "storeName": "Cửa hàng",
+        "timeRange": "Khung giờ",
+        "dayFilter": "Ngày áp dụng",
+        "fromTime": "Từ",
+        "toTime": "Đến"
+      },
+      "storeApplyTab": {
+        "title": "Danh sách các cửa hàng được áp dụng bảng giá",
+        "addStoreInMenu": "Thêm cửa hàng áp dụng",
+        "editStoreInMenu": "Cập nhật bảng giá"
+      }
+    },
+    "orders": {
+      "table": {
+        "invoice": "Mã đơn",
+        "quantity": "Số lượng",
+        "totalAmount": "Tổng cộng",
+        "finalAmount": "Thanh toán",
+        "paymentType": "Hình thức thanh toán",
+        "orderTime": "Thời gian",
+        "orderType": "Loại hóa đơn",
+        "status": "Trạng thái",
+        "cashier": "Thu ngân",
+        "detail": "Chi tiết",
+        "address": "Địa chỉ giao",
+        "custPhone": "Số điện thoại",
+        "discount": "Giảm giá",
+        "store": "Cửa hàng",
+        "note": "Ghi chú"
+      }
+    }
+  },
+  "common": {
+    "required": "Vui lòng nhập {{name}}",
+    "navigation": "Điều hướng",
+    "addMore": "Thêm",
+    "create": "Tạo",
+    "update": "Cập nhật",
+    "delete": "Xóa",
+    "save": "Lưu",
+    "cancel": "Hủy",
+    "all": "Tất cả",
+    "available": "Hoạt động",
+    "notAvailable": "Không Hoạt động",
+    "choosedItem": "Đã chọn",
+    "confirm": "Xác nhận",
+    "confirmDeleteTitle": "Xác nhận xóa",
+    "deleteSuccess": "Xóa thành công",
+    "atLeast": "Ít nhất {{number}} giá trị",
+    "filter": "Bộ lọc",
+    "clearFilter": "Xóa bộ lọc",
+    "fromTime": "Từ",
+    "toTime": "Đến",
+    "201": "Tạo thành công",
+    "200": "Thành công",
+    "400": "Lỗi",
+    "error": "Có lỗi xảy ra. Vui lòng thử lại",
+    "semester": "Chọn học kì"
+  }
+}

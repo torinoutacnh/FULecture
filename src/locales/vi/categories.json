@@ -1,0 +1,11 @@
+{
+  "list": "Danh sách các danh mục",
+  "table": {
+    "cateName": "Tên",
+    "cateNameEn": "Tên tiếng Anh",
+    "position": "Thứ tự"
+  },
+  "addBtn": "Thêm danh mục",
+  "addTitle": "Thêm danh mục",
+  "editTitle": "Cập nhật danh mục"
+}

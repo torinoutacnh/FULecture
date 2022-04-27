@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "fcms-fpt"
+  },
+  "targets": {
+    "fcms-fpt": {
+      "hosting": {
+        "lecturer": [
+          "lecturer-fcms"
+        ]
+      }
+    }
+  }
+}
