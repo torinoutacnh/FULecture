@@ -1,27 +1,16 @@
 import {
   Button,
-  CircularProgress,
   Dialog,
   DialogActions,
   DialogContent,
   DialogProps,
-  DialogTitle,
-  Grid,
-  MenuItem,
-  Slider
+  DialogTitle
 } from '@material-ui/core';
-import { Box } from '@material-ui/system';
-import { useRequest } from 'ahooks';
-import useLocales from 'hooks/useLocales';
-import React, { useCallback, useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
-import * as Yup from 'yup';
-import { yupResolver } from '@hookform/resolvers/yup';
 import LoadingAsyncButton from 'components/LoadingAsyncButton/LoadingAsyncButton';
-import { UploadMultiFile, UploadSingleFile } from 'components/upload';
+import { UploadSingleFile } from 'components/upload';
+import React, { useCallback, useEffect, useState } from 'react';
 
 type Props = DialogProps & {
-  studentId?: number | null;
   onAdd?: (data: any) => Promise<any>;
   onClose: () => any;
 };
