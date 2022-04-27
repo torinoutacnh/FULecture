@@ -1,16 +1,12 @@
-import { Box, Divider, Stack, Typography, Slider, Grid } from '@material-ui/core';
-import React, { useState, useEffect } from 'react';
-import { useFormContext } from 'react-hook-form';
-import { useParams } from 'react-router-dom';
+import { Box, Stack, Typography } from '@material-ui/core';
 import { useRequest } from 'ahooks';
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import { getTopicById } from 'redux/topic/api';
-import { InputField, RadioGroupField, UploadFileField } from '../../../components/form';
-import { PRODUCT_TYPE_DATA } from '../../../constraints';
-import VariantForm from '../VariantForm';
-import { Card, CardTitle } from './Card';
-import { TTopic } from '../../../types/topic';
 import QuillEditor from '../../../components/editor/quill/index';
-import Label from '../../../components/Label';
+import { InputField, UploadFileField } from '../../../components/form';
+import { TTopic } from '../../../types/topic';
+import { Card, CardTitle } from './Card';
 
 type Props = {
   isUpdate: boolean;
@@ -28,7 +24,6 @@ type Props = {
   technology?: string;
   setTechnology?: React.Dispatch<any>;
   fileData?: any;
-  setFileData?: React.Dispatch<any>;
 };
 // eslint-disable-next-line arrow-body-style
 const MiddleForm: React.FC<Props> = ({

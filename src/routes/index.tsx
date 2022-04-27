@@ -81,7 +81,7 @@ export default function Router() {
         </AuthGuard>
       ),
       children: [
-        { path: '/', element: <Navigate to="/dashboard/app" replace /> },
+        { path: '', element: <Navigate to="/dashboard/app" replace /> },
         { path: 'app', element: <GeneralApp /> },
         { path: 'ecommerce', element: <GeneralEcommerce /> },
         {
@@ -91,30 +91,30 @@ export default function Router() {
         {
           path: 'products',
           children: [
-            { path: '/', element: <Products /> },
+            { path: '', element: <Products /> },
             { path: 'new', element: <CreateProduct /> },
-            { path: '/:id', element: <UpdateProduct /> },
+            { path: ':id', element: <UpdateProduct /> },
             { path: 'master', element: <Products /> }
           ]
         },
         {
           path: 'LecturerGroups',
           children: [
-            { path: '/', element: <LecturerGroup /> },
+            { path: '', element: <LecturerGroup /> },
             { path: 'LecturerGroupDetail/:id', element: <LecturerGroupDetail /> }
           ]
         },
         {
           path: 'teams',
           children: [
-            { path: '/', element: <Team /> },
+            { path: '', element: <Team /> },
             { path: 'teamDetail/:id', element: <TeamDetail /> }
           ]
         },
         {
           path: 'topics',
           children: [
-            { path: '/', element: <TopicList /> },
+            { path: '', element: <TopicList /> },
             { path: 'all', element: <TopicList /> },
             { path: 'new', element: <AddTopic /> },
             { path: 'topicDetail/:id', element: <TopicDetail /> },
@@ -126,7 +126,7 @@ export default function Router() {
         {
           path: 'projects',
           children: [
-            { path: '/', element: <MentoringProjects /> },
+            { path: '', element: <MentoringProjects /> },
             { path: 'all', element: <MentoringProjects /> },
             { path: 'projectDetail/:id', element: <ProjectDetail /> },
             {
@@ -146,7 +146,7 @@ export default function Router() {
         {
           path: 'reviews',
           children: [
-            { path: '/', element: <Review /> },
+            { path: '', element: <Review /> },
             { path: 'all', element: <Review /> }
           ]
         },
@@ -157,59 +157,59 @@ export default function Router() {
         {
           path: 'applications',
           children: [
-            { path: '/', element: <Applications /> },
-            { path: '/all', element: <Applications /> }
+            { path: '', element: <Applications /> },
+            { path: 'all', element: <Applications /> }
           ]
         },
         {
           path: 'evaluationboards',
           children: [
-            { path: '/', element: <EvaluationBoards /> },
-            { path: '/councils/:id', element: <Councils /> },
-            { path: '/councils/councilDetail/:id/:boardId', element: <CouncilDetail /> },
+            { path: '', element: <EvaluationBoards /> },
+            { path: 'councils/:id', element: <Councils /> },
+            { path: 'councils/councilDetail/:id/:boardId', element: <CouncilDetail /> },
             {
-              path: '/councils/councilDetail/marks/:teamId/:boardId/:councilId',
+              path: 'councils/councilDetail/marks/:teamId/:boardId/:councilId',
               element: <Marks />
             }
           ]
         },
         {
           path: 'semesters',
-          children: [{ path: '/', element: <SemesterList /> }]
+          children: [{ path: '', element: <SemesterList /> }]
         },
         {
           path: 'profile',
-          children: [{ path: '/', element: <LecturerProfile /> }]
+          children: [{ path: '', element: <LecturerProfile /> }]
         },
         {
           path: 'collections',
           children: [
-            { path: '/', element: <CollectionListPage /> },
+            { path: '', element: <CollectionListPage /> },
             { path: 'new', element: <CreateCollectionPage /> },
-            { path: '/:id', element: <UpdateCollectionPage /> }
+            { path: ':id', element: <UpdateCollectionPage /> }
           ]
         },
         {
           path: 'categories',
-          children: [{ path: '/', element: <CategoryListPage /> }]
+          children: [{ path: '', element: <CategoryListPage /> }]
         },
         {
           path: 'menus',
           children: [
-            { path: '/', element: <MenusPage /> },
-            { path: '/:id', element: <UpdateMenuPage /> }
+            { path: '', element: <MenusPage /> },
+            { path: ':id', element: <UpdateMenuPage /> }
           ]
         },
-        { path: '/menu-in-store', element: <MenuInStorePage /> },
+        { path: 'menu-in-store', element: <MenuInStorePage /> },
         {
           path: 'stores',
           children: [
-            { path: '/', element: <StoreListPage /> },
+            { path: '', element: <StoreListPage /> },
             {
-              path: '/new',
+              path: 'new',
               element: <CreateStorePage />
             },
-            { path: '/:id', element: <UpdateStorePage /> }
+            { path: ':id', element: <UpdateStorePage /> }
           ]
         }
       ]
@@ -225,18 +225,18 @@ export default function Router() {
         </AuthGuard>
       ),
       children: [
-        { path: '/', element: <Navigate to="/store-admin/orders" replace /> },
+        { path: '', element: <Navigate to="/store-admin/orders" replace /> },
         { path: 'app', element: <GeneralApp /> },
 
         {
           path: 'orders',
           children: [
-            { path: '/', element: <OrderListPage /> },
+            { path: '', element: <OrderListPage /> },
             {
-              path: '/new',
+              path: 'new',
               element: <CreateStorePage />
             },
-            { path: '/:id', element: <UpdateStorePage /> }
+            { path: ':id', element: <UpdateStorePage /> }
           ]
         },
         {
@@ -247,8 +247,8 @@ export default function Router() {
     },
 
     {
-      path: '/',
-      element: <Navigate to="/auth/login" replace />
+      path: '',
+      element: <Navigate to="auth/login" replace />
     },
     // Main Routes
     {

@@ -62,7 +62,7 @@ export default function Topics() {
     }
   }, [semester]);
 
-  const editTopic = ({ topicId }) => navigate(`/${PATH_DASHBOARD.topics.updateTopic}/${topicId}`);
+  const editTopic = ({ topicId }) => navigate(`${PATH_DASHBOARD.topics.updateTopic}/${topicId}`);
 
   const onDelete = () => {
     if (currentDeleteItem.status === 1 || currentDeleteItem.status === 2) {

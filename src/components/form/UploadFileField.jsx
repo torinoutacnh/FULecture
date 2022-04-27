@@ -18,7 +18,7 @@ import { UploadSingleFile } from 'components/upload';
 
 import { DoneAllOutlined } from '@material-ui/icons';
 import { ReactComponent as UploadSVG } from '../../assets/images/upload.svg';
-import { uploadfile } from '../../redux/file/api';
+import { uploadfiletoreso } from '../../redux/file/api';
 
 const UploadImage = styled('img')({
   // width: '80px',
@@ -50,7 +50,7 @@ const UploadFileField = ({ name, label, defaultValue = '' }) => {
     formData.append('file', file);
     setIsUploading(true);
     try {
-      const res = await uploadfile(formData);
+      const res = await uploadfiletoreso(formData);
       onFormChange(res.data);
     } catch (err) {
       enqueueSnackbar(err.message ?? 'Có lỗi', {
