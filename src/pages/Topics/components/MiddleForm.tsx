@@ -3,6 +3,7 @@ import { useRequest } from 'ahooks';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getTopicById } from 'redux/topic/api';
+import RHFEditor from 'components/editor/jodit/index';
 import QuillEditor from '../../../components/editor/quill/index';
 import { InputField, UploadFileField } from '../../../components/form';
 import { TTopic } from '../../../types/topic';
@@ -179,7 +180,16 @@ const MiddleForm: React.FC<Props> = ({
         <Box>
           <Stack direction="column" spacing={2}>
             <Typography variant="subtitle2">Theory</Typography>
-            <QuillEditor
+            {/* <QuillEditor
+              id="theory"
+              placeholder="Theory..."
+              toolBar={isUpdate}
+              onChange={setTheory}
+              value={theory}
+              theme="snow"
+              readOnly={!isUpdate}
+            /> */}
+            <RHFEditor
               id="theory"
               placeholder="Theory..."
               toolBar={isUpdate}

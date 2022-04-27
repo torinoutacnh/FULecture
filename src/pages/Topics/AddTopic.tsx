@@ -162,7 +162,7 @@ const AddTopic = () => {
   });
 
   const methods = useForm<TTopic>({ resolver: yupResolver(validationSchema) });
-  const { handleSubmit } = methods;
+  const { handleSubmit, control } = methods;
 
   const onSubmit = (values: TTopic) => {
     values.createDate = new Date();
