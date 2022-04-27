@@ -251,14 +251,14 @@ const AddTopic = () => {
                   Lecturer can only create topic before{' '}
                   {moment(new Date(semester.inProgressDate)).format('DD MMMM, YYYY')}
                 </Typography>
-                <Button
+                {/* <Button
                   sx={{ ml: 2 }}
                   style={{ width: '110px', height: '40px' }}
                   variant="contained"
                   onClick={() => setOpen(true)}
                 >
                   Import File
-                </Button>
+                </Button> */}
               </Grid>
             </Grid>
 
