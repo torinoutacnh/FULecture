@@ -1,7 +1,7 @@
 import { Jodit } from 'jodit';
 import JoditReact from 'jodit-react';
 import React, { useEffect, useMemo, useState } from 'react';
-import { uploadfile } from 'redux/file/api';
+import { uploadfiletoreso } from 'redux/file/api';
 // import { string } from 'yup/lib/locale';
 
 const codeBlockButton = () => {
@@ -42,7 +42,7 @@ const imageUpload = (editor) => {
     }
     const formData = new FormData();
     formData.append('file', imageFile);
-    const imageInfo = await uploadfile(formData).then((res) => res.data);
+    const imageInfo = await uploadfiletoreso(formData).then((res) => res.data);
     insertImage(editor, imageInfo);
   };
 };

@@ -141,7 +141,7 @@ const MiddleForm: React.FC<Props> = ({
           </CardTitle>
           <Stack direction="column" spacing={2}>
             <Typography variant="subtitle2">Context</Typography>
-            <QuillEditor
+            <RHFEditor
               id="context"
               placeholder="Context..."
               toolBar={isUpdate}
@@ -151,7 +151,7 @@ const MiddleForm: React.FC<Props> = ({
               readOnly={!isUpdate}
             />
             <Typography variant="subtitle2">Problem</Typography>
-            <QuillEditor
+            <RHFEditor
               id="problem"
               placeholder="Problem..."
               toolBar={isUpdate}
@@ -161,7 +161,7 @@ const MiddleForm: React.FC<Props> = ({
               readOnly={!isUpdate}
             />
             <Typography variant="subtitle2">Proposed Solution</Typography>
-            <QuillEditor
+            <RHFEditor
               id="proposedSolution"
               placeholder="Proposed Solution..."
               toolBar={isUpdate}
@@ -180,15 +180,6 @@ const MiddleForm: React.FC<Props> = ({
         <Box>
           <Stack direction="column" spacing={2}>
             <Typography variant="subtitle2">Theory</Typography>
-            {/* <QuillEditor
-              id="theory"
-              placeholder="Theory..."
-              toolBar={isUpdate}
-              onChange={setTheory}
-              value={theory}
-              theme="snow"
-              readOnly={!isUpdate}
-            /> */}
             <RHFEditor
               id="theory"
               placeholder="Theory..."
@@ -199,7 +190,7 @@ const MiddleForm: React.FC<Props> = ({
               readOnly={!isUpdate}
             />
             <Typography variant="subtitle2">Output</Typography>
-            <QuillEditor
+            <RHFEditor
               id="output"
               placeholder="Output..."
               toolBar={isUpdate}
@@ -209,7 +200,7 @@ const MiddleForm: React.FC<Props> = ({
               readOnly={!isUpdate}
             />
             <Typography variant="subtitle2">Technology</Typography>
-            <QuillEditor
+            <RHFEditor
               id="technology"
               placeholder="Technology..."
               toolBar={isUpdate}
@@ -230,7 +221,7 @@ const MiddleForm: React.FC<Props> = ({
             <Typography variant="subtitle2">Task package 1</Typography>
             <InputField
               disabled={!isUpdate}
-              name="taskpackage1"
+              name="taskPackage1"
               label="Task Package 1"
               multiline
               rows={2}
@@ -242,7 +233,7 @@ const MiddleForm: React.FC<Props> = ({
 
             <InputField
               disabled={!isUpdate}
-              name="taskpackage2"
+              name="taskPackage2"
               label="Task Package 2"
               multiline
               rows={2}
@@ -254,7 +245,7 @@ const MiddleForm: React.FC<Props> = ({
 
             <InputField
               disabled={!isUpdate}
-              name="taskpackage3"
+              name="taskPackage3"
               label="Task Package 3"
               multiline
               rows={2}
@@ -266,7 +257,7 @@ const MiddleForm: React.FC<Props> = ({
 
             <InputField
               disabled={!isUpdate}
-              name="taskpackage4"
+              name="taskPackage4"
               label="Task Package 4"
               multiline
               rows={2}
@@ -278,7 +269,7 @@ const MiddleForm: React.FC<Props> = ({
 
             <InputField
               disabled={!isUpdate}
-              name="taskpackage5"
+              name="taskPackage5"
               label="Task Package 5"
               multiline
               rows={2}
