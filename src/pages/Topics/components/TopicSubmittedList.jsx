@@ -181,27 +181,25 @@ export default function Topics() {
                   </Grid>
                 </Grid>
               </Grid>
-              {new Date(semester.inProgressDate).getTime() > new Date().getTime() ? (
-                <Grid
-                  direction="column"
-                  xs={2}
-                  style={{ textAlign: 'center', justifyContent: 'center' }}
-                >
-                  <Tooltip describeChild title="Lecturer can only create topic in assigning phase">
-                    <Button
-                      onClick={() => {
-                        navigate(PATH_DASHBOARD.topics.addTopic);
-                      }}
-                      variant="contained"
-                      startIcon={<Icon icon={plusFill} />}
-                    >
-                      Add Topic
-                    </Button>
-                  </Tooltip>
-                </Grid>
-              ) : (
-                console.log('date', new Date().getTime())
-              )}
+              {/* {new Date(semester.inProgressDate).getTime() > new Date().getTime() ? ( */}
+              <Grid
+                direction="column"
+                xs={2}
+                style={{ textAlign: 'center', justifyContent: 'center' }}
+              >
+                <Tooltip describeChild title="Lecturer can only create topic in assigning phase">
+                  <Button
+                    onClick={() => {
+                      navigate(PATH_DASHBOARD.topics.addTopic);
+                    }}
+                    variant="contained"
+                    startIcon={<Icon icon={plusFill} />}
+                  >
+                    Add Topic
+                  </Button>
+                </Tooltip>
+              </Grid>
+              {/* // ) : ( // console.log('date', new Date().getTime()) // )} */}
             </Grid>
           </Grid>
         </Stack>
