@@ -62,7 +62,7 @@ export default function SemesterPopover() {
   const { enqueueSnackbar } = useSnackbar();
   const [open, setOpen] = useState(false);
   const { semester, chooseSemester } = useSemester();
-  const { run, data: semestersData = [] } = useRequest(() => getSemesters({ page: 1, limit: 3 }), {
+  const { run, data: semestersData = [] } = useRequest(() => getSemesters({ page: 1, limit: 10 }), {
     formatResult: (res) => res.data.result
   });
 
