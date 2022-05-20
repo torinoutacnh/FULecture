@@ -1,8 +1,8 @@
-import { styled } from '@material-ui/core/styles';
-// theme
-import typography from '../../../theme/typography';
+
 
 // ----------------------------------------------------------------------
+
+import { styled } from "@material-ui/core";
 
 const QuillEditorToolbarStyle = styled('div')(({ theme }) => {
   const isRTL = theme.direction === 'rtl';
@@ -33,7 +33,7 @@ const QuillEditorToolbarStyle = styled('div')(({ theme }) => {
       border: 'none',
       borderBottom: `solid 1px ${theme.palette.grey[500_32]}`,
       '& .ql-formats': {
-        '&:not(:last-child)': {
+        '&:not(:last-of-type)': {
           marginRight: theme.spacing(2)
         }
       },
@@ -48,10 +48,19 @@ const QuillEditorToolbarStyle = styled('div')(({ theme }) => {
         color: theme.palette.text.primary
       },
 
+      // Icon svg
+      '& button svg, span svg': {
+        width: 20,
+        height: 20
+      },
+
       // Select
       '& .ql-picker-label': {
-        ...typography.subtitle2,
-        color: theme.palette.text.primary
+        ...theme.typography.subtitle2,
+        color: theme.palette.text.primary,
+        '& .ql-stroke': {
+          stroke: theme.palette.text.primary
+        }
       },
       '& .ql-picker-label svg': {
         ...(isRTL && {

@@ -1,9 +1,7 @@
+import { Box, BoxProps, styled } from '@material-ui/core';
 import ReactQuill, { ReactQuillProps } from 'react-quill';
 // material
-import { styled } from '@material-ui/core/styles';
-import { Box, BoxProps, Toolbar } from '@material-ui/core';
-// theme
-import typography from '../../../theme/typography';
+
 //
 import EditorToolbar, { formats, redoChange, undoChange } from './QuillEditorToolbar';
 
@@ -14,7 +12,7 @@ const RootStyle = styled(Box)(({ theme }) => ({
   border: `solid 1px ${theme.palette.grey[500_32]}`,
   '& .ql-container.ql-snow': {
     borderColor: 'transparent',
-    ...typography.body1,
+    ...theme.typography.body1,
     fontFamily: theme.typography.fontFamily
   },
   '& .ql-editor': {
@@ -24,7 +22,7 @@ const RootStyle = styled(Box)(({ theme }) => ({
       color: theme.palette.text.disabled
     },
     '& pre.ql-syntax': {
-      ...typography.body2,
+      ...theme.typography.body2,
       padding: theme.spacing(2),
       borderRadius: theme.shape.borderRadius,
       backgroundColor: theme.palette.grey[900]
@@ -39,7 +37,6 @@ interface QuillEditorProps extends ReactQuillProps {
   error?: boolean;
   simple?: boolean;
   sx?: BoxProps;
-  toolBar?: boolean;
 }
 
 export default function QuillEditor({
@@ -49,13 +46,15 @@ export default function QuillEditor({
   onChange,
   simple = false,
   sx,
-  toolBar = true,
   ...other
 }: QuillEditorProps) {
   const modules = {
     toolbar: {
       container: `#${id}`,
-      handlers: { undo: undoChange, redo: redoChange }
+      handlers: {
+        undo: undoChange,
+        redo: redoChange
+      }
     },
     history: {
       delay: 500,
@@ -77,11 +76,11 @@ export default function QuillEditor({
         ...sx
       }}
     >
-      {toolBar ? <EditorToolbar id={id} isSimple={simple} /> : ''}
+      {/* <EditorToolbar id={id} isSimple={simple} /> */}
       <ReactQuill
         value={value}
         onChange={onChange}
-        modules={toolBar == true ? modules : { toolBar: null }}
+        modules={modules}
         formats={formats}
         placeholder="Write something awesome..."
         {...other}

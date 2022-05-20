@@ -12,6 +12,7 @@ function TaskInprogress({ currentReport }: any) {
       <Stack display="flex" direction="column" style={{ padding: '1em' }}>
         <QuillEditor
           value={currentReport?.tasksInProgress}
+          onChange={() => currentReport?.tasksInProgress}
           readOnly={true}
           toolBar={false}
           theme={false}

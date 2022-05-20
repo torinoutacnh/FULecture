@@ -62,7 +62,6 @@ function WeeklyReport() {
   //     return res.data;
   //   }
   // });
-  console.log('reportData', currentReport);
   // console.log('projectData', projectData);
   return (
     <Page>

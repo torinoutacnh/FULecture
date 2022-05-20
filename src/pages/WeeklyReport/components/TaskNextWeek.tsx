@@ -14,6 +14,7 @@ function TaskNextWeek({ currentReport }: any) {
       <Stack display="flex" direction="column" style={{ padding: '1em' }}>
         <QuillEditor
           value={currentReport?.taskBeginNextWeek}
+          onChange={() => currentReport?.taskBeginNextWeek}
           readOnly={true}
           toolBar={false}
           theme={false}
