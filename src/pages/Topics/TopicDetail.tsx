@@ -47,6 +47,7 @@ import LoadingAsyncButton from 'components/LoadingAsyncButton/LoadingAsyncButton
 import { QuillEditor } from 'components/editor';
 import { getLecturerGroups } from 'redux/LecturerGroups/api';
 
+import { InputField } from 'components/form';
 import Feedback from './components/Feedback';
 import AssignTeamCard from './components/AssignTeamCard';
 import Page from '../../components/Page';
@@ -79,6 +80,8 @@ const TopicDetail = () => {
   const [isApprove, setIsApprove] = useState(false);
   const [isReviewer, setIsReviewer] = useState(false);
 
+  console.log(currentTopic?.context);
+
   const { data, run, loading } = useRequest(() => getTopicNoTypeById(id!), {
     refreshDeps: [id],
     formatResult: (res) => res.data
@@ -86,7 +89,7 @@ const TopicDetail = () => {
 
   useEffect(() => {
     getLecturerDepartments({ lectureId: user?.zipCode, isApprover: true }).then((res) => {
-      res.data.result?.map(({ departmentId }: any) => {
+      res.data?.result?.map(({ departmentId }: any) => {
         if (currentTopic?.departmentId === departmentId) {
           setIsApprove(true);
         }
@@ -98,7 +101,7 @@ const TopicDetail = () => {
     () => getProjects({ topicId: id!, status: 1 }),
     {
       refreshDeps: [id],
-      formatResult: (res) => res.data.result
+      formatResult: (res) => res?.data?.result
     }
   );
   const {
@@ -113,7 +116,7 @@ const TopicDetail = () => {
         departmentId: currentTopic?.departmentId
       }),
     {
-      formatResult: (res) => res.data.result[0]
+      formatResult: (res) => res?.data?.result[0]
     }
   );
 
@@ -588,35 +591,41 @@ const TopicDetail = () => {
                 <Stack display="flex" direction="column">
                   <Grid display="flex" direction="column" spacing={2}>
                     <Typography variant="subtitle1">Context</Typography>
-                    <QuillEditor
-                      sx={{ mt: 1 }}
-                      value={currentTopic?.context}
-                      readOnly={true}
-                      toolBar={false}
-                      theme={false}
-                    />
+                    {currentTopic?.context && (
+                      <QuillEditor
+                        sx={{ mt: 1 }}
+                        value={currentTopic?.context}
+                        // readOnly={true}
+                        toolBar={false}
+                        theme={false}
+                      />
+                    )}
                   </Grid>
 
                   <Grid sx={{ mt: 2 }} display="flex" direction="column" spacing={2}>
                     <Typography variant="subtitle1">Problem</Typography>
-                    <QuillEditor
-                      sx={{ mt: 1 }}
-                      value={currentTopic?.problem}
-                      readOnly={true}
-                      toolBar={false}
-                      theme={false}
-                    />
+                    {currentTopic?.problem && (
+                      <QuillEditor
+                        sx={{ mt: 1 }}
+                        value={currentTopic?.problem}
+                        readOnly={true}
+                        toolBar={false}
+                        theme={false}
+                      />
+                    )}
                   </Grid>
 
                   <Grid sx={{ mt: 2 }} display="flex" direction="column" spacing={2}>
                     <Typography variant="subtitle1">Proposed Solution</Typography>
-                    <QuillEditor
-                      sx={{ mt: 1 }}
-                      value={currentTopic?.proposedSolution}
-                      readOnly={true}
-                      toolBar={false}
-                      theme={false}
-                    />
+                    {currentTopic?.proposedSolution && (
+                      <QuillEditor
+                        sx={{ mt: 1 }}
+                        value={currentTopic?.proposedSolution}
+                        readOnly={true}
+                        toolBar={false}
+                        theme={false}
+                      />
+                    )}
                   </Grid>
                 </Stack>
               )}
@@ -631,35 +640,41 @@ const TopicDetail = () => {
                 <Stack display="flex" direction="column">
                   <Grid display="flex" direction="column" spacing={2}>
                     <Typography variant="subtitle1">Theory</Typography>
-                    <QuillEditor
-                      sx={{ mt: 1 }}
-                      value={currentTopic?.theory}
-                      readOnly={true}
-                      toolBar={false}
-                      theme={false}
-                    />
+                    {currentTopic?.theory && (
+                      <QuillEditor
+                        sx={{ mt: 1 }}
+                        value={currentTopic?.theory}
+                        readOnly={true}
+                        toolBar={false}
+                        theme={false}
+                      />
+                    )}
                   </Grid>
 
                   <Grid sx={{ mt: 2 }} display="flex" direction="column" spacing={2}>
                     <Typography variant="subtitle1">Output</Typography>
-                    <QuillEditor
-                      sx={{ mt: 1 }}
-                      value={currentTopic?.output}
-                      readOnly={true}
-                      toolBar={false}
-                      theme={false}
-                    />
+                    {currentTopic?.output && (
+                      <QuillEditor
+                        sx={{ mt: 1 }}
+                        value={currentTopic?.output}
+                        readOnly={true}
+                        toolBar={false}
+                        theme={false}
+                      />
+                    )}
                   </Grid>
 
                   <Grid sx={{ mt: 2 }} display="flex" direction="column" spacing={2}>
                     <Typography variant="subtitle1">Technology</Typography>
-                    <QuillEditor
-                      sx={{ mt: 1 }}
-                      value={currentTopic?.technology}
-                      readOnly={true}
-                      toolBar={false}
-                      theme={false}
-                    />
+                    {currentTopic?.technology && (
+                      <QuillEditor
+                        sx={{ mt: 1 }}
+                        value={currentTopic?.technology}
+                        readOnly={true}
+                        toolBar={false}
+                        theme={false}
+                      />
+                    )}
                   </Grid>
                 </Stack>
               )}
@@ -674,55 +689,69 @@ const TopicDetail = () => {
                 <Stack display="flex" direction="column">
                   <Grid display="flex" direction="column" spacing={2}>
                     <Typography variant="subtitle1">Task Package 1</Typography>
-                    <QuillEditor
-                      sx={{ mt: 1 }}
-                      value={currentTopic?.taskPackage1}
-                      readOnly={true}
-                      toolBar={false}
-                      theme={false}
-                    />
+                    {currentTopic?.taskPackage1 && (
+                      <QuillEditor
+                        sx={{ mt: 1 }}
+                        value={currentTopic?.taskPackage1}
+                        readOnly={true}
+                        toolBar={false}
+                        theme={false}
+                      />
+                    )}
                   </Grid>
 
                   <Grid sx={{ mt: 2 }} display="flex" direction="column" spacing={2}>
                     <Typography variant="subtitle1">Task Package 2</Typography>
-                    <QuillEditor
-                      sx={{ mt: 1 }}
-                      value={currentTopic?.taskPackage2}
-                      readOnly={true}
-                      toolBar={false}
-                      theme={false}
-                    />
+
+                    {currentTopic?.taskPackage2 && (
+                      <QuillEditor
+                        sx={{ mt: 1 }}
+                        value={currentTopic?.taskPackage2}
+                        readOnly={true}
+                        toolBar={false}
+                        theme={false}
+                      />
+                    )}
                   </Grid>
 
                   <Grid sx={{ mt: 2 }} display="flex" direction="column" spacing={2}>
                     <Typography variant="subtitle1">Task Package 3</Typography>
-                    <QuillEditor
-                      sx={{ mt: 1 }}
-                      value={currentTopic?.taskPackage3}
-                      readOnly={true}
-                      toolBar={false}
-                      theme={false}
-                    />
+
+                    {currentTopic?.taskPackage3 && (
+                      <QuillEditor
+                        sx={{ mt: 1 }}
+                        value={currentTopic?.taskPackage3}
+                        readOnly={true}
+                        toolBar={false}
+                        theme={false}
+                      />
+                    )}
                   </Grid>
                   <Grid sx={{ mt: 2 }} display="flex" direction="column" spacing={2}>
                     <Typography variant="subtitle1">Task Package 4</Typography>
-                    <QuillEditor
-                      sx={{ mt: 1 }}
-                      value={currentTopic?.taskPackage4}
-                      readOnly={true}
-                      toolBar={false}
-                      theme={false}
-                    />
+
+                    {currentTopic?.taskPackage4 && (
+                      <QuillEditor
+                        sx={{ mt: 1 }}
+                        value={currentTopic?.taskPackage4}
+                        readOnly={true}
+                        toolBar={false}
+                        theme={false}
+                      />
+                    )}
                   </Grid>
                   <Grid sx={{ mt: 2 }} display="flex" direction="column" spacing={2}>
                     <Typography variant="subtitle1">Task Package 5</Typography>
-                    <QuillEditor
-                      sx={{ mt: 1 }}
-                      value={currentTopic?.taskPackage5}
-                      readOnly={true}
-                      toolBar={false}
-                      theme={false}
-                    />
+
+                    {currentTopic?.taskPackage5 && (
+                      <QuillEditor
+                        sx={{ mt: 1 }}
+                        value={currentTopic?.taskPackage5}
+                        readOnly={true}
+                        toolBar={false}
+                        theme={false}
+                      />
+                    )}
                   </Grid>
                 </Stack>
               )}
