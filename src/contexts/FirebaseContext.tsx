@@ -113,9 +113,13 @@ function AuthProvider({ children }: { children: ReactNode }) {
   useEffect(
     () =>
       firebase.auth().onAuthStateChanged((user) => {
+        console.log(user);
+
         if (user) {
           getLecturerById(user.email)
             .then((response) => {
+              console.log(response);
+
               if (response.status !== 404) {
                 const docRef = firebase.firestore().collection('users').doc(user.uid);
                 docRef
@@ -147,6 +151,8 @@ function AuthProvider({ children }: { children: ReactNode }) {
               });
             });
         } else {
+          console.log('login error');
+
           dispatch({
             type: Types.Initial,
             payload: { isAuthenticated: false, user: null, error: 'Có lỗi' }
@@ -161,7 +167,10 @@ function AuthProvider({ children }: { children: ReactNode }) {
 
   const loginWithGoogle = () => {
     const provider = new firebase.auth.GoogleAuthProvider();
-    return firebase.auth().signInWithPopup(provider);
+
+    const a = firebase.auth().signInWithPopup(provider);
+    a.then((result) => console.log(result));
+    return a;
   };
 
   const loginWithFaceBook = () => {

@@ -61,6 +61,11 @@ function DashboardLayout() {
     return <LoadingPage />;
   }
 
+  console.log('navbar', DashboardNavbar);
+  console.log('sidebar', DashboardSidebar);
+  console.log('style', MainStyle);
+  console.log('outlet', Outlet);
+
   return (
     <RootStyle>
       <DashboardNavbar onOpenSidebar={() => setOpen(true)} />
